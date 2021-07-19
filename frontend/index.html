@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resturant</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="style/bootstrap.css">
+    <link rel="stylesheet" href="style/font-owsome.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="row">
+            <div class="col">
+                <input type="text" class="search-text" style="width: 100%;">
+            </div>
+            <div class="col">
+                <button class="btn btn-primary search">search</button>
+            </div>
+            <div class="col">
+                <select class="form-select sort-select" aria-label="Default select example">
+                    <option selected>Sort By</option>
+                    <option value="rating">rating</option>
+                    <option value="name">name</option>
+                    <option value="ETA">ETA</option>
+                  </select>
+            </div>
+
+            <div class="col">
+                <select class="form-select filter-select" aria-label="Default select example">
+                    <option selected>Filter By Tag</option>
+                    <option value="healthy">healthy</option>
+                    <option value="american">american</option>
+                    <option value="vegiees">vegiees</option>
+                    <option value="crunchy">crunchy</option>
+                    <option value="fastfood">fastfood</option>
+                    <option value="pastry">pastry</option>
+                    <option value="nonveg">nonveg</option>
+                    <option value="chinese">chinese</option>
+                  </select>
+            </div>
+        </div>
+        <br><br>
+        <div class="row res-box">
+            <!-- rendered data goes here -->
+        </div>
+
+    </div>
+
+    <!-- javascript -->
+    <script src="js/jquery.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

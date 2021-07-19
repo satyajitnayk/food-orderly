@@ -1,0 +1,32 @@
+.container {
+    padding: 15px;
+    border: 1px purple dashed;
+}
+
+.res-box {
+    border: 1px purple dashed;
+}
+
+.card-img-top {
+    height: 150px;
+}
+
+.res-pad {
+    padding: 15px;
+}
+
+.card {
+    background-color: rgb(126, 126, 126);
+    color: snow;
+}
+
+
+.small-box {
+    background-color: honeydew;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 0 8px 0 8px;
+    color: black;
+    text-align: center;
+    font-weight: 600;
+}
