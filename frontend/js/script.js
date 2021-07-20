@@ -1,7 +1,7 @@
 //function to handle if favorite btn clicked => store json data into locaalstorage
 //by converting into stringify 
 function addToFavorite(resturantData) {
-    // console.log(JSON.parse(resturantData));
+    console.log(JSON.parse(resturantData));
     //get privously added favorite cards using fav key
     // favResturantData = localStorage.getItem('fav');
     //apppend new card
@@ -15,7 +15,7 @@ $(function() {
 
     generateAllResturant();
 
-
++
 
     //function to handle filterBy(tag)
     function filterBy(tag) {
@@ -86,7 +86,7 @@ $(function() {
     }
 
     function getCard(resturant) {
-        // stringData = JSON.stringify(resturant);
+        stringData = JSON.stringify(resturant);
         // addToFavorite(stringData);
         // console.log(stringData);
         printTag = getTagHTML(resturant); 
@@ -101,7 +101,7 @@ $(function() {
                     +'<p class="card-text">Rating: '+resturant.rating+'</p>'
                     +'<p class="card-text">ETA: '+resturant.ETA+' mins</p>'
                     +printTag
-                    +'<button class="btn btn-warning" onclick="addToFavorite(\\'+resturant+')">add to fav</button>'
+                    +'<button class="btn btn-warning" onclick="addToFavorite('+"'"+stringData+"'"+')">add to fav</button>'
                     +'</div>'
                 +'</div>'
             +'</div>';
