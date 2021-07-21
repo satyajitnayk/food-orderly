@@ -4,14 +4,15 @@ include_once("../config/dbconnect.php");
 
 header('Content-Type: application/json');
 
-if (isset($_GET['apikey'])) {
+if (isset($_GET['apikey']) && isset($_GET['offset'])) {
     //check if api_key is valid or not
     $api_key = $_GET['apikey'];
+    $offset = $_GET['offset'];
     $apiKey = $conn->query("SELECT * FROM `master_api_key` WHERE api_key = $api_key");
     //if api key is valid
     if ($apiKey->num_rows > 0) {
-        //fecth data from master_resturant table
-        $resturantResponse = $conn->query("SELECT * FROM master_resturant");
+        //fecth data from master_resturant table (using pagination)
+        $resturantResponse = $conn->query("SELECT * FROM master_resturant LIMIT $offset, 20");
 
         $dataArray = [];
 

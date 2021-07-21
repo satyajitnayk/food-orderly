@@ -13,9 +13,9 @@ function addToFavorite(resturantData) {
 
 $(function() {
 
-    generateAllResturant();
+    //by default fetch first 20 resturants and display
+    generateAllResturant(1);
 
-+
 
     //function to handle filterBy(tag)
     function filterBy(tag) {
@@ -121,8 +121,12 @@ $(function() {
         return printHTML;
     }
 
-    function generateAllResturant() {
-        let response = fetch("../apis/getdata.php?apikey=14598822");
+    function generateAllResturant(pagenumber) {
+
+        let no_ofresponse_per_page = 20;
+        let offset = (pagenumber-1)*no_ofresponse_per_page;
+
+        let response = fetch("../apis/getdata.php?apikey=14598822&offset="+offset);
         response.then(res => res.json()).then(data => {
     
             printHTML = generateView(data);
@@ -153,6 +157,14 @@ $(function() {
         var tag = $(this).val();
         // console.log(label);
         filterBy(tag);
+    });
+
+    //code for pagination to work
+    $('li').on('click',function(e) {
+        e.preventDefault();
+        id = parseInt($(this).find('a').attr('id'));
+        console.log(id);
+        generateAllResturant(id);
     });
 
 
